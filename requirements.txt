@@ -17,11 +17,11 @@ torch<=2.0.1+cu118 # see https://pytorch.org/get-started/locally (recommended)
 torchvision>=0.15.2+cu118
 tqdm>=4.65.0
 ultralytics>=8.0.111
-protobuf<=3.20.1  # https://github.com/ultralytics/yolov5/issues/8012
+#protobuf<=3.20.1  # https://github.com/ultralytics/yolov5/issues/8012
 
 # Logging ---------------------------------------------------------------------
- tensorboard>=2.12.2
- clearml>=1.2.0
+ #tensorboard>=2.12.2
+ #clearml>=1.2.0
 # comet
 
 # Plotting --------------------------------------------------------------------
