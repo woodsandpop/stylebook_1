@@ -25,7 +25,7 @@ def imageInput(src):
                 f.write(image_file.getbuffer())
 
             #call Model prediction--
-            model = torch.hub.load('ultralytics/yolov5', 'custom', path='pcb_1st/weights/best.pt', force_reload=True)  
+            model = torch.hub.load('ultralytics/yolov5', 'custom', path='hairstyle_1st/weights/best.pt', force_reload=True)  
             #model.cuda() if device == 'cuda' else model.cpu()
             pred = model(imgpath)
             pred.render()  # render bbox in image
@@ -37,14 +37,14 @@ def imageInput(src):
             
             img_ = Image.open(outputpath)
             with col2:
-                st.image(img_, caption='AI PCB Predictions', use_column_width=True)
+                st.image(img_, caption='AI Hairstyle Recommendation', use_column_width=True)
 
-    elif src == 'From test PCB Images': 
+    elif src == 'From sample Hairstyle Images': 
         # Image selector slider
         imgpath = glob.glob('data/images/test/*')
         imgsel = st.slider('Select random images from test set.', min_value=1, max_value=len(imgpath), step=1) 
         image_file = imgpath[imgsel-1]
-        submit = st.button("Predict PCB Defect!")
+        submit = st.button("Predict Hairstyle type")
         col1, col2 = st.columns(2)
         with col1:
             img = Image.open(image_file)
@@ -52,7 +52,7 @@ def imageInput(src):
         with col2:            
             if image_file is not None and submit:
                 #call Model prediction--
-                model = torch.hub.load('ultralytics/yolov5','custom', path= 'pcb_1st/weights/best.pt', force_reload=True) 
+                model = torch.hub.load('ultralytics/yolov5','custom', path= 'hairstyle_1st/weights/best.pt', force_reload=True) 
                 pred = model(image_file)
                 pred.render()  # render bbox in image
                 for im in pred.ims:
@@ -60,16 +60,16 @@ def imageInput(src):
                     im_base64.save(os.path.join('data/outputs', os.path.basename(image_file)))
                 #--Display predicton
                     img_ = Image.open(os.path.join('data/outputs', os.path.basename(image_file)))
-                    st.image(img_, caption='AI PCB Predictions')
+                    st.image(img_, caption='AI Hairstyle Recommendation')
 
 def main():
     
     st.image("logo.JPG", width = 500)
     st.title("Coresys Limited")
-    st.header("AI Tool for PCB Defect Detection")
+    st.header("AI Tool for Hairstyle Recommendation")
     st.header("👈🏽 Select the Image Source options")
     st.sidebar.title('⚙️Options')
-    src = st.sidebar.radio("Select input source.", ['From test PCB Images', 'Upload your own PCB Image'])
+    src = st.sidebar.radio("Select input source.", ['From sample Hairstyle Images', 'Upload your own Hairstyle Image'])
     imageInput(src)
    
 if __name__ == '__main__':
