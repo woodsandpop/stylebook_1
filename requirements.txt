@@ -1,5 +1,4 @@
-# YOLOv5 requirements
-# Usage: pip install -r requirements.txt
+
 wget>=3.2
 streamlit>=1.23.1
 detect>==2020.12.3
@@ -18,11 +17,11 @@ torch<=2.0.1+cu118 # see https://pytorch.org/get-started/locally (recommended)
 torchvision>=0.15.2+cu118
 tqdm>=4.65.0
 ultralytics>=8.0.111
-# protobuf<=3.20.1  # https://github.com/ultralytics/yolov5/issues/8012
+protobuf<=3.20.1  # https://github.com/ultralytics/yolov5/issues/8012
 
 # Logging ---------------------------------------------------------------------
-# tensorboard>=2.12.2
-# clearml>=1.2.0
+ tensorboard>=2.12.2
+ clearml>=1.2.0
 # comet
 
 # Plotting --------------------------------------------------------------------
@@ -42,7 +41,7 @@ seaborn>=0.12.2
 
 # Deploy ----------------------------------------------------------------------
 setuptools>=65.5.1 # Snyk vulnerability fix
-# tritonclient[all]~=2.24.0
+tritonclient[all]~=2.24.0
 
 # Extras ----------------------------------------------------------------------
 # ipython  # interactive notebook
