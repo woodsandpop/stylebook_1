@@ -64,8 +64,8 @@ def imageInput(src):
 
 def main():
     
-    st.image("logo.JPG", width = 500)
-    st.title("Coresys Limited")
+    st.image("logo.JPEG", width = 500)
+    st.title("Stylebook Directory Limited")
     st.header("AI Tool for Hairstyle Recommendation")
     st.header("👈🏽 Select the Image Source options")
     st.sidebar.title('⚙️Options')
