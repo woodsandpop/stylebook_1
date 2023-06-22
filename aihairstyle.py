@@ -64,7 +64,7 @@ def imageInput(src):
 
 def main():
     
-    st.image("logo.JPEG", width = 500)
+    st.image("logo.JPG", width = 500)
     st.title("Stylebook Directory Limited")
     st.header("AI Tool for Hairstyle Recommendation")
     st.header("👈🏽 Select the Image Source options")
